@@ -1,0 +1,715 @@
+/* ===================================
+   FONT
+=================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap");
+
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f3faff 50%,
+    #eaf7fc 100%
+  );
+}
+
+
+/* ===================================
+   CONTAINER
+=================================== */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1450px;
+
+  margin: 0 auto;
+  padding: 70px 0;
+
+  display: grid;
+
+  /* الصورة يمين - الكلام شمال */
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  direction: rtl;
+}
+
+
+/* ===================================
+   IMAGE SIDE
+=================================== */
+
+.hero-slider {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ===================================
+   IMAGE WRAPPER
+=================================== */
+
+.hero-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius:
+    35px 10px 35px 10px;
+
+  background-color: #ffffff;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 65, 110, 0.18);
+}
+
+
+/* ===================================
+   IMAGES
+=================================== */
+
+.hero-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  opacity: 0;
+
+  transform:
+    translateX(100%)
+    scale(0.97);
+
+  transition:
+    opacity 0.8s ease,
+    transform 1s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.hero-image.active {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+
+  z-index: 2;
+}
+
+
+/* ===================================
+   IMAGE DECORATION
+=================================== */
+
+.slider-decoration {
+  position: absolute;
+
+  width: 90%;
+  height: 90%;
+
+  right: -25px;
+  bottom: 5px;
+
+  border:
+    2px solid rgba(7, 164, 205, 0.2);
+
+  border-radius:
+    35px 10px 35px 10px;
+
+  z-index: -1;
+}
+
+
+/* ===================================
+   TEXT SIDE
+=================================== */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  direction: rtl;
+
+  text-align: right;
+}
+
+
+/* ===================================
+   SMALL TITLE
+=================================== */
+
+.hero-small-title {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #08a5cf;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  opacity: 0;
+
+  animation:
+    smallTitleShow 0.7s ease forwards;
+}
+
+
+@keyframes smallTitleShow {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ===================================
+   MAIN TITLE
+=================================== */
+
+.hero-title {
+  min-height: 155px;
+
+  margin: 0 0 20px;
+
+  color: #073c70;
+
+  font-family:
+    "Cairo",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(38px, 4vw, 60px);
+
+  font-weight: 800;
+
+  line-height: 1.45;
+
+  direction: rtl;
+
+  text-align: right;
+}
+
+
+/* النص اللي بيتكتب */
+
+.typed-text {
+  color: #073c70;
+}
+
+
+/* ===================================
+   TYPING CURSOR
+=================================== */
+
+.typing-cursor {
+  display: inline-block;
+
+  margin-right: 4px;
+
+  color: #08a5cf;
+
+  font-weight: 400;
+
+  animation:
+    cursorBlink 0.7s infinite;
+}
+
+
+@keyframes cursorBlink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ===================================
+   CONTENT AFTER TYPING
+=================================== */
+
+.hero-after-typing {
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.hero-after-typing.show {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+
+/* ===================================
+   DESCRIPTION
+=================================== */
+
+.hero-description {
+  max-width: 540px;
+
+  margin-bottom: 28px;
+
+  color: #617589;
+
+  font-family:
+    "Cairo",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 2;
+
+  text-align: justify;
+}
+
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.hero-btn {
+  min-width: 135px;
+
+  padding: 12px 25px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-family:
+    "Cairo",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* ===================================
+   SECONDARY BUTTON
+=================================== */
+
+.secondary-btn {
+  color: #087baa;
+
+  background-color:
+    rgba(255, 255, 255, 0.6);
+
+  border:
+    1px solid #9ed7e8;
+}
+
+
+.secondary-btn:hover {
+  color: #ffffff;
+
+  background-color: #087baa;
+
+  border-color: #087baa;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(8, 123, 170, 0.18);
+}
+
+
+/* ===================================
+   BACKGROUND SHAPES
+=================================== */
+
+.hero-shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.hero-shape-one {
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  right: -200px;
+
+  background:
+    rgba(13, 173, 216, 0.07);
+}
+
+
+.hero-shape-two {
+  width: 350px;
+  height: 350px;
+
+  bottom: -200px;
+  left: -120px;
+
+  border:
+    55px solid
+    rgba(0, 120, 190, 0.04);
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    min-height: auto;
+  }
+
+
+  .hero-container {
+    width: 92%;
+
+    grid-template-columns:
+      1.1fr 0.9fr;
+
+    gap: 40px;
+
+    padding: 55px 0;
+  }
+
+
+  .hero-slider {
+    height: 400px;
+  }
+
+
+  .hero-image-wrapper {
+    height: 350px;
+  }
+
+
+  .hero-title {
+    min-height: 125px;
+
+    font-size: 39px;
+  }
+
+
+  .hero-description {
+    font-size: 14px;
+
+    line-height: 1.9;
+  }
+
+}
+
+
+/* ===================================
+   SMALL TABLET
+=================================== */
+
+@media (max-width: 850px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 45px 0;
+  }
+
+
+  /* IMAGE */
+
+  .hero-slider {
+    order: 1;
+
+    width: 92%;
+    height: 400px;
+
+    margin: 0 auto;
+  }
+
+
+  .hero-image-wrapper {
+    height: 360px;
+  }
+
+
+  /* TEXT */
+
+  .hero-content {
+    order: 2;
+
+    text-align: center;
+  }
+
+
+  .hero-title {
+    min-height: 115px;
+
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    font-size: 36px;
+  }
+
+
+  .hero-description {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+
+    text-align: center;
+  }
+
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 600px) {
+
+  .hero-container {
+    width: 92%;
+
+    padding: 30px 0 40px;
+
+    gap: 20px;
+  }
+
+
+  /* IMAGE */
+
+  .hero-slider {
+    width: 100%;
+    height: 270px;
+  }
+
+
+  .hero-image-wrapper {
+    height: 245px;
+
+    border-radius:
+      22px 6px 22px 6px;
+  }
+
+
+  .slider-decoration {
+    right: -10px;
+
+    bottom: 5px;
+  }
+
+
+  /* TEXT */
+
+  .hero-small-title {
+    font-size: 14px;
+  }
+
+
+  .hero-title {
+    min-height: 100px;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+
+    line-height: 1.5;
+  }
+
+
+  .hero-description {
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    text-align: center;
+  }
+
+
+  /* BUTTON */
+
+  .hero-buttons {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .hero-btn {
+    width: 100%;
+
+    max-width: 300px;
+  }
+
+
+  /* SHAPE */
+
+  .hero-shape-one {
+    width: 250px;
+    height: 250px;
+  }
+
+}
+
+
+/* ===================================
+   VERY SMALL MOBILE
+=================================== */
+
+@media (max-width: 380px) {
+
+  .hero-title {
+    min-height: 95px;
+
+    font-size: 25px;
+  }
+
+
+  .hero-slider {
+    height: 225px;
+  }
+
+
+  .hero-image-wrapper {
+    height: 205px;
+  }
+
+
+  .hero-description {
+    font-size: 12.5px;
+  }
+
+}
+
+
+/* ===================================
+   ACCESSIBILITY
+   تقليل الحركة لو الجهاز طالب كده
+=================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-image {
+    transition: none;
+  }
+
+
+  .typing-cursor {
+    animation: none;
+  }
+
+
+  .hero-after-typing {
+    transition: none;
+  }
+
+}

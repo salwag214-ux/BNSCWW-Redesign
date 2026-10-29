@@ -1,0 +1,508 @@
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar {
+    width: 100%;
+    height: 90px;
+  
+    background: rgba(255, 255, 255, 0.97);
+  
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: center;
+  
+    border-bottom: 1px solid #e7eef5;
+  
+    box-shadow:
+      0 4px 20px rgba(0, 70, 120, 0.08);
+  }
+  
+  
+  /* ===================================
+     CONTAINER
+  =================================== */
+  
+  .navbar-container {
+    position: relative;
+  
+    width: 92%;
+    max-width: 1450px;
+    height: 100%;
+  
+    margin: 0 auto;
+  
+    display: flex;
+    align-items: center;
+  
+    direction: rtl;
+  }
+  
+  
+  /* ===================================
+     LOGO
+  =================================== */
+  
+  .navbar-logo {
+    position: relative;
+    z-index: 10;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex-shrink: 0;
+  
+    text-decoration: none;
+  }
+  
+  
+  .navbar-logo img {
+    width: 105px;
+    height: 75px;
+  
+    object-fit: contain;
+  
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .navbar-logo:hover img {
+    transform: scale(1.04);
+  }
+  
+  
+  /* ===================================
+     NAVIGATION
+  =================================== */
+  
+  .nav-menu {
+    position: absolute;
+  
+    left: 50%;
+  
+    transform: translateX(-50%);
+  
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* ===================================
+     LINKS CONTAINER
+  =================================== */
+  
+  .navbar-links {
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 6px;
+  
+    padding: 0;
+    margin: 0;
+  
+    list-style: none;
+  
+    white-space: nowrap;
+  }
+  
+  
+  /* ===================================
+     LINK ITEM
+  =================================== */
+  
+  .navbar-links li {
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  /* ===================================
+     LINKS
+  =================================== */
+  
+  .navbar-links a {
+    position: relative;
+  
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 0 12px;
+  
+    color: #183b56;
+  
+    font-size: 15px;
+    font-weight: 600;
+  
+    text-decoration: none;
+  
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+  }
+  
+  
+  /* ===================================
+     LINE UNDER LINKS
+  =================================== */
+  
+  .navbar-links a::after {
+    content: "";
+  
+    position: absolute;
+  
+    right: 50%;
+    bottom: 20px;
+  
+    width: 0;
+    height: 3px;
+  
+    background: #08a9dc;
+  
+    border-radius: 20px;
+  
+    transform: translateX(50%);
+  
+    transition: width 0.3s ease;
+  }
+  
+  
+  /* ===================================
+     HOVER
+  =================================== */
+  
+  .navbar-links a:hover {
+    color: #009bd1;
+  }
+  
+  
+  .navbar-links a:hover::after {
+    width: 35px;
+  }
+  
+  
+  /* ===================================
+     ACTIVE
+  =================================== */
+  
+  .navbar-links a.active {
+    color: #008fc7;
+  }
+  
+  
+  .navbar-links a.active::after {
+    width: 35px;
+  
+    background: #008fc7;
+  }
+  
+  
+  /* ===================================
+     MENU BUTTON
+  =================================== */
+  
+  .menu-toggle {
+    display: none;
+  
+    width: 46px;
+    height: 46px;
+  
+    padding: 0;
+  
+    border: 1px solid #dcecf3;
+  
+    border-radius: 12px;
+  
+    background: #f4fbfe;
+  
+    cursor: pointer;
+  
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    gap: 5px;
+  
+    transition: 0.3s ease;
+  }
+  
+  
+  .menu-toggle:hover {
+    background: #eaf8fd;
+  }
+  
+  
+  .menu-toggle span {
+    display: block;
+  
+    width: 22px;
+    height: 2px;
+  
+    background: #087baa;
+  
+    border-radius: 10px;
+  
+    transition: 0.3s ease;
+  }
+  
+  
+  /* ===================================
+     MENU BUTTON X ANIMATION
+  =================================== */
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform:
+      translateY(7px)
+      rotate(45deg);
+  }
+  
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform:
+      translateY(-7px)
+      rotate(-45deg);
+  }
+  
+  
+  /* ===================================
+     MEDIUM DESKTOP
+  =================================== */
+  
+  @media (max-width: 1200px) {
+  
+    .navbar-container {
+      width: 95%;
+    }
+  
+  
+    .navbar-logo img {
+      width: 90px;
+      height: 70px;
+    }
+  
+  
+    .navbar-links {
+      gap: 2px;
+    }
+  
+  
+    .navbar-links a {
+      padding: 0 8px;
+  
+      font-size: 13px;
+    }
+  
+  }
+  
+  
+  /* ===================================
+     TABLET + MOBILE
+  =================================== */
+  
+  @media (max-width: 950px) {
+  
+    .navbar {
+      height: 80px;
+    }
+  
+  
+    .navbar-container {
+      width: 90%;
+  
+      justify-content: space-between;
+    }
+  
+  
+    /* Logo remains visible */
+  
+    .navbar-logo img {
+      width: 85px;
+      height: 65px;
+    }
+  
+  
+    /* Show hamburger */
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+  
+    /* Menu box */
+  
+    .nav-menu {
+      position: absolute;
+  
+      top: calc(100% + 12px);
+      left: 0;
+  
+      width: 100%;
+      height: auto;
+  
+      transform: none;
+  
+      padding: 10px;
+  
+      background: rgba(255, 255, 255, 0.98);
+  
+      border: 1px solid #e3eef4;
+  
+      border-radius: 18px;
+  
+      box-shadow:
+        0 18px 45px rgba(0, 69, 110, 0.15);
+  
+      opacity: 0;
+      visibility: hidden;
+  
+      pointer-events: none;
+  
+      transform: translateY(-15px);
+  
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+    }
+  
+  
+    /* Open Menu */
+  
+    .nav-menu.open {
+      opacity: 1;
+  
+      visibility: visible;
+  
+      pointer-events: auto;
+  
+      transform: translateY(0);
+    }
+  
+  
+    /* Links */
+  
+    .navbar-links {
+      width: 100%;
+      height: auto;
+  
+      display: flex;
+      flex-direction: column;
+  
+      gap: 3px;
+  
+      white-space: normal;
+    }
+  
+  
+    .navbar-links li {
+      width: 100%;
+      height: auto;
+    }
+  
+  
+    .navbar-links a {
+      width: 100%;
+      height: 48px;
+  
+      padding: 0 18px;
+  
+      justify-content: flex-start;
+  
+      border-radius: 10px;
+  
+      font-size: 14px;
+    }
+  
+  
+    /* Mobile Hover */
+  
+    .navbar-links a:hover {
+      background: #eef9fd;
+  
+      color: #008fc7;
+    }
+  
+  
+    /* Remove desktop line */
+  
+    .navbar-links a::after {
+      display: none;
+    }
+  
+  
+    /* Active mobile link */
+  
+    .navbar-links a.active {
+      background: #eaf8fd;
+  
+      color: #008fc7;
+    }
+  
+  }
+  
+  
+  /* ===================================
+     MOBILE
+  =================================== */
+  
+  @media (max-width: 600px) {
+  
+    .navbar {
+      height: 72px;
+    }
+  
+  
+    .navbar-container {
+      width: 92%;
+    }
+  
+  
+    .navbar-logo img {
+      width: 75px;
+      height: 58px;
+    }
+  
+  
+    .menu-toggle {
+      width: 42px;
+      height: 42px;
+  
+      border-radius: 10px;
+    }
+  
+  
+    .nav-menu {
+      top: calc(100% + 8px);
+  
+      padding: 8px;
+  
+      border-radius: 15px;
+    }
+  
+  
+    .navbar-links a {
+      height: 45px;
+  
+      font-size: 13px;
+    }
+  
+  }
